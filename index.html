@@ -1,12 +1,22 @@
-<script>
-function handleSubmit() {
-    const submitButton = document.getElementById('submit');
-    const inputField = document.getElementById('inputField');
-
-    // Disable the submit button and input field
-    submitButton.disabled = true;
-    inputField.disabled = true;
-
-    // Optionally, you can also handle the form submission here
-}
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Test</title>
+    <script>
+        function handleSubmit() {
+            // Disable the submit button and input field after the first submission
+            document.getElementById('submitButton').disabled = true;
+            document.getElementById('inputField').disabled = true;
+            alert('Form submitted!'); // Placeholder for form submission logic
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); handleSubmit();">
+        <input type="text" id="inputField" required />
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+</body>
+</html>
